@@ -4,7 +4,7 @@ Jinja2 Documentation:    http://jinja.pocoo.org/2/documentation/
 Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
 This file creates your application.
 """
-
+import datetime
 from app import app
 from flask import render_template, request, redirect, url_for, flash
 
@@ -27,7 +27,12 @@ def about():
 @app.route('/profile')
 def profile():
     """Render website's home page."""
-    return render_template('profile.html')
+    date = format_date_joined()
+    return render_template('profile.html', date=date)
+    
+def format_date_joined():
+    date_joined = datetime.date(2018,1,1)
+    return date_joined.strftime("%B, %Y")
 
 
 ###
@@ -43,7 +48,7 @@ def send_text_file(file_name):
 
 @app.after_request
 def add_header(response):
-    """
+    """python
     Add headers to both force latest IE rendering engine or Chrome Frame,
     and also tell the browser not to cache the rendered page. If we wanted
     to we could change max-age to 600 seconds which would be 10 minutes.
