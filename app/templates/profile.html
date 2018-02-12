@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block main %}
+<html>
+<head>
+    <title>Profile Page</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='app.css')}}"
+</head>
+<body>
+    <div class="container1">
+    <div class = "start">
+        <div class="pic">
+            <img src={{url_for('static', filename="images.jpg")}}>
+        </div>
+        <div class="info">
+            <h1> Kadaine Williams</h1>
+            <h3>@OVOkadz</h3>
+            <h3>Kingston, Jamaica</h3>
+            <h3 class="adjust">Joined January 2018</h3>
+        </div>
+    </div>
+    <div class ="words">
+    <h2> I am a student of the University of the West Indies who loves Web Development. My Hobbies include coding, watching TV and playing vedio games. Please contact me if you want to work on any Web Development project.
+    </h2>
+    <div class="num">
+        <h1> 7</h1>
+        <h1> 100</h1>
+        <h1> 250</h1>
+        
+    </div>
+        <div class="num">
+        <h3> Post</h3>
+        <h3> Following</h3>
+        <h3>Followers</h3>
+        
+    </div>
+    <div  class="central">
+        <button class="button">Follow</button>
+    </div>
+    
+    </div>
+    </div>
+        
+</body>
+</html>
+{% endblock %}
